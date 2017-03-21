@@ -1,0 +1,75 @@
+/* body {
+  padding-top: 50px;
+}
+.row row-pb-md {
+  padding: 100px 15px;
+  text-align: center;
+} */
+
+.@{fa-css-prefix} {
+  display: inline-block;
+  font: normal normal normal @fa-font-size-base/@fa-line-height-base FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img 
+{
+width: 70%;
+margin: auto;
+}
+				
+
+center{
+
+font-family: 'Tangerine',serif;
+font-size:60px;
+ 
+}
+
+.gi-3x{font-size: 60px;
+	float: left;
+position: absolute;
+	}
+	
+.gi-4x{font-size: 60px;
+	float: left;
+	position: absolute;
+		}
+
+.nav-separator:after {
+	
+    content: ' ';
+    display: inline;
+    float: left;
+    background: #ADADAD;
+    margin: 5 10px;
+	top : 10px;
+    height: 18px;
+    width: 1px;
+	position: absolute;
+    top: 17px;
+	
+}
+
+
+.btn-separator:after {
+    content: ' ';
+    display: block;
+    float: left;
+    background: #ADADAD;
+    margin: 0 10px;
+    height: 65px;
+    width: 1px;
+	right:116px;
+	position: absolute;
+    top: 0px;
+}
+
+
+
