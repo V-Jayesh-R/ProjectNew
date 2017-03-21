@@ -26,8 +26,8 @@ public class CartItemController {
 	@RequestMapping("/addtocart-{productId}")
 	public String addToCart(@PathVariable("productId") int productId , Principal p, @ModelAttribute()CartItem cartItem)
 	{
-		String username = p.getName();
-		 int userId = userRegServiceImpl.getUserRegByName(username).getUserId();
+		String userName = p.getName();
+		 int userId = userRegServiceImpl.getUserRegByName(userName).getUserId();
 
 		cartItem.setUserId(userId);
 		cartItem.setCartId(userId);
@@ -48,6 +48,13 @@ public class CartItemController {
 
 		return "CartList";
 	}
+	
+	@RequestMapping("/cartlist")
+	public String getCartList()
+	{
+		return "CartList";
+	}
+		
 	
 	
 

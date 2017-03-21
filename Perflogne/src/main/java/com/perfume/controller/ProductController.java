@@ -78,6 +78,7 @@ public class ProductController {
 			
 			return "ProductForm";
 		}
+		
 		product.setProductActualPrice(product.getProductActualPrice() * product.getProductQuantity());
 		productServiceImpl.addProduct(product);	
 		String path="D:\\New Project\\Perflogne\\src\\main\\webapp\\resources\\ProductImages\\";

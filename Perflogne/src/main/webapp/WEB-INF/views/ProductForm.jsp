@@ -135,7 +135,7 @@
         	</c:forEach>   --%>
         	
         	<tr ng-repeat="pl in myscope | filter:search">
-					<td scope="row"><img src="resources/ProductImages/-{{pl.productId}}.jpg" height="80px" width="80px" alt="img not uploaded"/></td>
+					<td scope="row"><img src="resources/ProductImages/{{pl.productId}}.jpg" height="80px" width="80px" alt="img not uploaded"/></td>
 					<td>{{pl.productId}}</td>
 					<td>{{pl.productName}}</td>
 					<td>{{pl.productDescription}}</td>

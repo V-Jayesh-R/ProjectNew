@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row">
    <div class="col-xs-6 col-sm-6 item-photo">
-                    <img style="max-width:100%;" src="resources/images/productImage-{{pl.productId}}.jpg" alt="product image"/>
+                    <img style="max-width:100%;" src="resources/ProductImages/{{pl.productId}}.jpg" alt="product image"/>
                 </div>
                 <div class="col-xs-5" style="border:0px solid gray">
                     <!-- Seller data and product title -->
@@ -30,8 +30,8 @@
 
                     <!-- Shopping Buttons -->
                     <div class="section" style="padding-bottom:20px;">
-                        <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</button>
-                        <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Wishlist </a></h6>
+                        <button class="btn btn-success"><a href="addtocart-{{myscope.productId}}"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</button>
+                        <h6><a href=""><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Wishlist </a></h6>
                     </div>                                        
                 </div>                              
 	</div>

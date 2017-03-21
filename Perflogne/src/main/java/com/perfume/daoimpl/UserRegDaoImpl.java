@@ -50,7 +50,7 @@ public class UserRegDaoImpl implements UserRegDao{
 	@SuppressWarnings("unchecked")
 	public UserReg getUserRegByName(String userName) {
 		// TODO Auto-generated method stub
-		List<UserReg> userList = sessionFactory.getCurrentSession().createQuery("from UserReg where userName = "+userName).getResultList();
+		List<UserReg> userList = sessionFactory.getCurrentSession().createQuery("from UserReg where userName = "+"'"+userName+"'").getResultList();
 		return userList.get(0);
 	}
 
