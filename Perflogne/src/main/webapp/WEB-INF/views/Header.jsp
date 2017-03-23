@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
   
-	 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+	 
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,22 +49,63 @@
 					<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
 					<li><a href="https://twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					<li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				</ul>
 				
+				
+				
+				
+        				
+        				<%-- <li class="dropdown" >
+        				<security:authorize access="hasRole('USER')">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="category">Category Page</a></li>
+           						<li><a href="subcategory">Subcategory Page</a></li>
+            					<li><a href="product">Product Page</a></li>
+            					<li><a href="supplier">Supplier Page</a></li>
+            					<li><a href="brand">Brand Page</a></li>
+						</ul>
+							</security:authorize> 
+					</li> --%>
+        		
+        			        			
+        		</ul>	
+        			
 				<!-- <ul class="nav navbar-nav navbar-right"> -->
-			
 		 			<div class="header-text-container pull-right">
     								<p class="header-text"></p>
     								<p class="header-link">
     								<security:authorize access="isAuthenticated()">Welcome
     								<security:authentication property="principal.Username"/>
-                                        </security:authorize>
+                                          </security:authorize>
+                                          
+                                          <security:authorize access="isAnonymous()">
                                 <c:if test="${empty pageContext.request.userPrincipal}">
-                                  <a href="login">Login</a>           </c:if>
+                                  <a href="login">Login</a>    &nbsp;or&nbsp;<a href="userreg">create an account</a>       
+                                  </c:if>
+                                  </security:authorize>
+                                  
+                                  <security:authorize access="isAuthenticated()">
                                <c:if test="${!empty pageContext.request.userPrincipal}">
                                       <a href="perform_logout">Logout</a>
                                </c:if>
-		 			&nbsp;or&nbsp;<a href="userreg">create an account</a></p>
+                          </security:authorize>
+		 			</p>
+		 			
+        				 <security:authorize access="hasRole('ROLE_ADMIN')">
+        				<div class="dropdown" >
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="category">Category Page</a></li>
+           						<li><a href="subcategory">Subcategory Page</a></li>
+            					<li><a href="product">Product Page</a></li>
+            					<li><a href="supplier">Supplier Page</a></li>
+            					<li><a href="brand">Brand Page</a></li>
+						</ul>
+					</div>
+        			</security:authorize>
+		 			
+        				
+        				 
 		 			</div>		
 							
 			</div>
@@ -75,7 +116,7 @@
 				
 
 		<script src="resources/js/jquery-3.1.1.min.js"></script>
-		<script src="resources/js/loginmodal.js" ></script>
+		
 <script src="resources/js/bootstrap.min.js" ></script>
 <script src="resources/js/angular.min.js"></script>
 			

@@ -23,5 +23,10 @@ public class CartItemService  {
 		// TODO Auto-generated method stub
 		return cartItemDaoImpl.getCartListByUserId(userId);
 	}
+	
+	public String listCartItemByJson(int userId) {
+		
+		return cartItemDaoImpl .listCartItemByJson(userId);
+	}
 
 }

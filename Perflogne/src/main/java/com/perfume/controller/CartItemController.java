@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,16 +47,28 @@ public class CartItemController {
 
 		cartItemService.addToCart(cartItem);
 
-		return "CartList";
+		return "redirect:/cartlist";
 	}
 	
 	@RequestMapping("/cartlist")
-	public String getCartList()
-	{
+	public String getCartList(Model model,Principal p) {
+		String username=p.getName();
+		int userId=userRegServiceImpl.getUserRegByName(username).getUserId();
+		model.addAttribute("cartlistbyjson", cartItemService.listCartItemByJson(userId));
 		return "CartList";
 	}
-		
 	
+	
+		
+	/*@RequestMapping(value = "/cartlis")
+	public String getCartList(Principal p ,Model model)
+	{		
+		int userId = userRegServiceImpl.getUserRegByName(p.getName()).getUserId();
+		model.addAttribute("cartlistbyjson",cartItemService.listCartItemByJson(userId));
+	
+		return "CartList";
+	}*/
+
 	
 
 }

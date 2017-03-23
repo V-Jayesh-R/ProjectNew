@@ -46,5 +46,11 @@ public class MainController {
 		return "Header";
 	}
 	
+	@RequestMapping("/index")
+	public String getIndexHome() {
+		
+		return "index";
+	}
+	
 	
 }

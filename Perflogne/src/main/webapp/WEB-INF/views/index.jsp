@@ -1,84 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-  
-	 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ page isELIgnored="false"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="resources/css/mfw.css" />
-<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-<link href="//fonts.googleapis.com/css?family=Tangerine"
-	rel="stylesheet" type="text/css" />
+<%@include file="Header.jsp" %>
 <link rel="stylesheet"
-	href="resources/css/button.css">
-
-</head>
-<body background="resources/CssImages/bluebg.jpg">
-<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-			 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-				<a class="navbar-brand" href="#"></a>
-			</div>
-			<div class=" collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index">Home</a></li>
-					<li class="dropdown" >
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Us <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</li>
-					<span class="nav-separator"></span>
-					<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-					<li><a href="https://twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				</ul>
-				
-				<!-- <ul class="nav navbar-nav navbar-right"> -->
-			
-		 			<div class="header-text-container pull-right">
-    								<p class="header-text"></p>
-    								<p class="header-link">
-    								<security:authorize access="isAuthenticated()">Welcome
-    								<security:authentication property="principal.Username"/>
-                                        </security:authorize>
-                                <c:if test="${empty pageContext.request.userPrincipal}">
-                                  <a href="login">Login</a>           </c:if>
-                               <c:if test="${!empty pageContext.request.userPrincipal}">
-                                      <a href="perform_logout">Logout</a>
-                               </c:if>
-		 			&nbsp;or&nbsp;<a href="userreg">create an account</a></p>
-		 			</div>
-		 			
-			
-					<!-- <li><a href="login?logout"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
-			
-				
-					<li><a href=""><span class="glyphicon glyphicon-log-in" ></span> Login</a></li> -->
-				<!-- </ul>	 -->			
-							
-			</div>
-		</div>
-	</nav>
-
-	
+	href="resources/css/megamenu.css">
+	<link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" href="resources/css/ie.css">
 	<div class="container">
 		<div class="row row-pb-md">
 			<div class="col-md-2">
@@ -89,13 +15,112 @@
 			</div>
 			
 			<div class="col-md-2" >
-				<a href="#"><span class="glyphicon glyphicon-user gi-3x"></span></a>
+				<a href="login"><span class="glyphicon glyphicon-user gi-3x"></span></a>
 				<span class="btn-separator"></span>
-				<a href="#"><span class="glyphicon glyphicon-shopping-cart gi-4x"></span></a>
+				<a href="cartlist"><span class="glyphicon glyphicon-shopping-cart gi-4x"></span></a>
 			
 			</div>	
 		</div>
 	</div>
+	
+	
+	<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+    	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">My Store</a>
+	</div>
+	
+	<div class="collapse navbar-collapse js-navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="dropdown mega-dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <span class="caret"></span></a>				
+				<ul class="dropdown-menu mega-dropdown-menu">
+					<li class="col-sm-12">
+						<ul>
+							<c:forEach var="category" items="${categoryList}">
+													<div class="dropdown">
+														<div class="col-md-2">
+ 															<button class="dropbtn">${category.categoryName}</button>
+  																<div class="dropdown-content">
+  																	<div class="row">
+    																	<a href="#"><c:forEach var="subCategory" items="${category.subCategory}">
+																			<div class="col-md-12">
+																				<ul>
+																				<li>
+																				${subCategory.subCategoryName}
+																				</li>
+																				</ul>
+																			</div>
+																		</c:forEach> </a>
+																	</div>
+																</div>
+														</div>
+													</div>
+												</c:forEach>
+						</ul>
+					</li>
+					
+					
+					
+				</ul>				
+			</li>
+            <li class="dropdown mega-dropdown">
+    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <span class="caret"></span></a>				
+				<ul class="dropdown-menu mega-dropdown-menu">
+					<li class="col-sm-3">
+    					<ul>
+							<li class="dropdown-header"></li>
+							
+							<li class="divider"></li>
+							<li class="dropdown-header"></li>
+                           
+							
+						</ul>
+					</li>
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header"></li>
+													
+						</ul>
+					</li>
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header"></li>
+                                             
+						</ul>
+					</li>
+                   
+                           
+						</ul>
+					</li>
+				</ul>	
+							
+		
+		
+        <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <li><a href="#">My cart (0) items</a></li>
+      </ul>
+	</div><!-- /.nav-collapse -->
+  </nav>
+</div>
+	
+	
 <div class="container">
 
    <section >
@@ -114,13 +139,49 @@
         </div>
  </section>
     </div>
-				
-				
+    
+    
+    	
+		 
+		
+		<!-- Slider -->
+		
+		 <div class="csslider1 autoplay ">
+		<input name="cs_anchor1" id="cs_slide1_0" type="radio" class="cs_anchor slide">
+		<input name="cs_anchor1" id="cs_slide1_1" type="radio" class="cs_anchor slide">
+		<input name="cs_anchor1" id="cs_slide1_2" type="radio" class="cs_anchor slide">
+		
+		<ul>
+			<li class="cs_skeleton"><img src="resources/CssImages/imgslider1.png" style="width: 100%;"></li>
+			<li class="num0 img slide"> <img src="resources/CssImages/imgslider1.png" alt="img-slider-1" title="img-slider-1"></li>
+			<li class="num1 img slide"> <img src="resources/CssImages/imgslider2.png" alt="img-slider-2" title="img-slider-2"></li>
+			<li class="num2 img slide"> <img src="resources/CssImages/imgslider3.png" alt="img-slider-3" title="img-slider-3"></li>
+		</ul>
+		
+		<div class="cs_arrowprev">
+			<label class="num0" for="cs_slide1_0"><span><i></i><b></b></span></label>
+			<label class="num1" for="cs_slide1_1"><span><i></i><b></b></span></label>
+			<label class="num2" for="cs_slide1_2"><span><i></i><b></b></span></label>
+		</div>
+		<div class="cs_arrownext">
+			<label class="num0" for="cs_slide1_0"><span><i></i><b></b></span></label>
+			<label class="num1" for="cs_slide1_1"><span><i></i><b></b></span></label>
+			<label class="num2" for="cs_slide1_2"><span><i></i><b></b></span></label>
+		</div>
+		<div class="cs_bullets">
+			<label class="num0" for="cs_slide1_0"> <span class="cs_point"></span>
+				<span class="cs_thumb"><img src="resources/CssImages/imgslider1.png" alt="img-slider-1" ></span></label>
+			<label class="num1" for="cs_slide1_1"> <span class="cs_point"></span>
+				<span class="cs_thumb"><img src="resources/CssImages/imgslider2.png" alt="img-slider-2" ></span></label>
+			<label class="num2" for="cs_slide1_2"> <span class="cs_point"></span>
+				<span class="cs_thumb"><img src="resources/CssImages/imgslider3.png" alt="img-slider-3" ></span></label>
+		</div>
+		</div>
+		<!-- Slider-->
 
-		<script src="resources/js/jquery-3.1.1.min.js"></script>
-		<script src="resources/js/loginmodal.js" ></script>
-<script src="resources/js/bootstrap.min.js" ></script>
+    	
+				
+				<script src="resources/js/megamenu.js"></script>
+				<script type="text/javascript" src="resources/js/ie.js"></script>
 
-			
-	</body>
-	</html>
+		<%@include file="Footer.jsp" %>
