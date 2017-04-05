@@ -21,21 +21,21 @@ public class UserRegController {
 	@Autowired
 	UserRegServiceImpl userRegServiceImpl;
 	
-	@RequestMapping("/userreg")
+	/*@RequestMapping("/userreg")
 	public String getUserPage(Model model) {
 		model.addAttribute("userreg", new UserReg());
 		model.addAttribute("userreglist", userRegServiceImpl.listUsers());
 	
 		return "UserRegForm";
-	}
+	}*/
 	
-	@RequestMapping("/adduserreg")
+	/*@RequestMapping("/adduserreg")
 	public String addUserReg( @ModelAttribute("userreg")UserReg userReg) {
 		userReg.setEnabled(true);
 		userReg.setRole("USER");
 		userRegServiceImpl.addUserReg(userReg);
 		return "redirect:/userreg";
-	}
+	}*/
 	
 
 	@RequestMapping("/login")

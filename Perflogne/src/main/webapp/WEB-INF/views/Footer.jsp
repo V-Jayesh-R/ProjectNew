@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 
 <link rel="stylesheet" href="resources/css/footer.css" />
 
@@ -63,6 +61,10 @@
     </footer>
    
 </div>
+<script src="resources/js/jquery-3.1.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js" ></script>
+<script src="resources/js/angular.min.js"></script>
 
 </body>
+
 </html>

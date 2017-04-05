@@ -58,17 +58,5 @@ public class CartItemController {
 		return "CartList";
 	}
 	
-	
-		
-	/*@RequestMapping(value = "/cartlis")
-	public String getCartList(Principal p ,Model model)
-	{		
-		int userId = userRegServiceImpl.getUserRegByName(p.getName()).getUserId();
-		model.addAttribute("cartlistbyjson",cartItemService.listCartItemByJson(userId));
-	
-		return "CartList";
-	}*/
-
-	
 
 }

@@ -50,6 +50,7 @@
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 </bean>
-
+<bean id="userReg" class="com.perfume.model.UserReg">
+</bean>
 
 </beans>

@@ -66,11 +66,11 @@
 			<caption>
 				<h2>Category List</h2>
 			</caption>
-			<div class="row">
+			
 				<div class="col-xs-12 col-md-4 col-sm-4">
 					<input class="form-control" type="text" ng-model="search" placeholder="search"/>
 				</div>
-			</div>
+			
 
 			<tr>
 
@@ -87,10 +87,7 @@
 					<td>{{clist.categoryDescription}}</td>
 					<td><a href="updateCategory-{{clist.categoryId}}" class="btn btn-warning">Edit</a></td>
 					<td><a href="deleteCategory-{{clist.categoryId}}" class="btn btn-danger">Delete</a></td>
-				</tr>
-				
-			
-				
+				</tr>	
 			</table>
 	</div>
 	
@@ -101,8 +98,4 @@
 		$scope.myscope=${categorylistjson}	
 	});
 	</script>
-	
-	
-	
-	
 <%@include file="Footer.jsp" %>

@@ -30,7 +30,7 @@
 							</td>
 							<td data-th="Subtotal" class="text-center">{{ci.productActualPrice}}</td>
 							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-info btn-sm" type="reset"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
@@ -40,13 +40,17 @@
 							<td class="text-center"><strong>{{ci.productActualPrice}}</strong></td>
 						</tr>
 						<tr ng-repeat="ci in myscope">
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-							<td colspan="2" class="hidden-xs"></td>
+							<td colspan="5" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>{{ci.productActualPrice}}</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
 						</tr>
+						
+				
+				
 					</tfoot>
 				</table>
+				<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+				<a href="#" class="btn btn-success">Checkout <i class="fa fa-angle-right"></i></a>	
+				
 </div>
 
 <script>

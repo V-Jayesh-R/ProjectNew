@@ -65,16 +65,6 @@
         </thead>
         
         <tbody>
-        	<%-- <c:forEach items="${subcategorylist}" var="s">
-        	<tr>
-            <td scope="row">${s.subCategoryId}</td>
-			<td>${s.subCategoryName}</td>
-			<td>${s.subCategoryDescription}</td>
-			<td>${s.category.categoryName}</td>
-			<td><a href="updateSubCategory-${s.subCategoryId}" class="btn btn-warning">Edit</a></td>
-			<td><a href="removeSubCategory-${s.subCategoryId}" class="btn btn-danger">Delete</a></td>
-        	</tr>
-        	</c:forEach> --%>
         	
         	<tr ng-repeat="s in myscope | filter:search">
 					<td scope="row"> {{s.subCategoryId}}</td>

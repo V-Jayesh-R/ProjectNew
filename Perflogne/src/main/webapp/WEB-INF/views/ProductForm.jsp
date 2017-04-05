@@ -7,7 +7,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div>
-								<center><h2>Add Product</h2></center>
+								<h2><center>Add Product</center></h2>
 							</div>
 						</div>
 						<hr>
@@ -111,28 +111,6 @@
 			<th>Delete</th>   
 			<th>View</th>
         </tr>
-        
-        
-        	<%-- <c:forEach items="${productlist}" var="pl">
-        	<tr>
-				 <td scope="row">
-				 
-	<img src="resources/images/${pl.productId}.jpeg" height="80px" width="80px" alt="img not uploaded"/></td>
-            			<td>${pl.productId}</td>
-            	<td>${pl.productName}</td>
-                <td>${pl.productDescription}</td>
-              	<td>${pl.productActualPrice}</td>
-				<td>${pl.productDiscount}</td>
-				<td>${pl.productMadeCountry}</td>
-				<td>${pl.productStock}</td>
-				<td>${pl.category.categoryName}</td>
-				<td>${pl.subCategory.subCategoryName}</td>
-				<td>${pl.brand.brandName}</td>
-				<td>${pl.supplier.supplierName}</td>
-               <td><a href="updateProduct-${pl.productId}" class="btn btn-warning">Edit</a></td>
-			<td><a href="removeProduct-${pl.productId}" class="btn btn-danger">Delete</a></td>
-        	</tr>
-        	</c:forEach>   --%>
         	
         	<tr ng-repeat="pl in myscope | filter:search">
 					<td scope="row"><img src="resources/ProductImages/{{pl.productId}}.jpg" height="80px" width="80px" alt="img not uploaded"/></td>
@@ -156,7 +134,7 @@
 	</table>
 </div>
 
-
+<script src="resources/js/angular.min.js"></script>
 	<script>
 	var a=angular.module('myApp',[]);
 	a.controller('myController',function($scope){

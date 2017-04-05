@@ -10,7 +10,7 @@ public interface UserRegDao {
 	/*public void updateUserReg(UserReg up);
 	public void removeUserReg(UserReg ru);*/
 	public List<UserReg> listUsers();
-	public UserReg getUserRegById(int userReg);
+	public UserReg getUserRegById(int userId);
 	public UserReg getUserRegByName(String userName);
 
 }

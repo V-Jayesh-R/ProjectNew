@@ -3,8 +3,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-  
-	 
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,14 +12,19 @@
 <title>Insert title here</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="resources/css/mfw.css" />
 <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-<link href="//fonts.googleapis.com/css?family=Tangerine"
-	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="resources/css/mfw.css" />
 <link rel="stylesheet"
 	href="resources/css/button.css">
-
+<link rel="stylesheet"
+	href="resources/css/Demo.css">
+	
+	<link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link rel="stylesheet" href="resources/css/chocolat.css" type="text/css" media="screen" charset="utf-8">			  
+			<link href="resources/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+			<link rel="stylesheet" href="resources/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+			<link href="resources/css/style4.css" rel="stylesheet" type="text/css" media="all" />	
+	
 </head>
 <body background="resources/CssImages/bluebg.jpg">
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -54,7 +57,7 @@
 				
 				
         				
-        				<%-- <li class="dropdown" >
+        				<li class="dropdown" >
         				<security:authorize access="hasRole('USER')">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -65,7 +68,7 @@
             					<li><a href="brand">Brand Page</a></li>
 						</ul>
 							</security:authorize> 
-					</li> --%>
+					</li>
         		
         			        			
         		</ul>	
@@ -111,14 +114,8 @@
 			</div>
 		</div>
 	</nav>
-
+ 
 			
 				
 
-		<script src="resources/js/jquery-3.1.1.min.js"></script>
 		
-<script src="resources/js/bootstrap.min.js" ></script>
-<script src="resources/js/angular.min.js"></script>
-			
-	
-	

@@ -149,7 +149,7 @@ public class ProductController {
 		model.addAttribute("brandlist", brandServiceImpl.listBrands());
 		model.addAttribute("brandlistjson", brandServiceImpl.listBrandsByJson());
 		model.addAttribute("product",productServiceImpl.getProductyById(productId));
-		
+		model.addAttribute("productlistjson", productServiceImpl.listProductsByJson());
 		return "ViewProduct";
 	}
 

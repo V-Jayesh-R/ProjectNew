@@ -33,8 +33,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form:form method="POST" modelAttribute="userreg"
-									action="adduserreg" id="login-form" role="form"
+								<form:form method="POST" role="form"
 									style="display: block;">
 
 									<div class="form-group">

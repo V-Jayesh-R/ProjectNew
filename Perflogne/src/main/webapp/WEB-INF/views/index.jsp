@@ -37,70 +37,38 @@
 	</div>
 	
 	<div class="collapse navbar-collapse js-navbar-collapse">
+	<c:forEach items="${categorylist}" var="categorylist" >
 		<ul class="nav navbar-nav">
 			<li class="dropdown mega-dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <span class="caret"></span></a>				
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">${categorylist.categoryName}<span class="caret"></span></a>				
 				<ul class="dropdown-menu mega-dropdown-menu">
 					<li class="col-sm-12">
 						<ul>
-							<c:forEach var="category" items="${categoryList}">
-													<div class="dropdown">
-														<div class="col-md-2">
- 															<button class="dropbtn">${category.categoryName}</button>
-  																<div class="dropdown-content">
-  																	<div class="row">
-    																	<a href="#"><c:forEach var="subCategory" items="${category.subCategory}">
-																			<div class="col-md-12">
-																				<ul>
-																				<li>
-																				${subCategory.subCategoryName}
-																				</li>
-																				</ul>
-																			</div>
-																		</c:forEach> </a>
-																	</div>
-																</div>
+							<c:forEach var="subCategory" items="${categorylist.subCategory}">
+								<div class="dropdown">
+									<div class="col-md-2">
+ 										<button class="dropbtn">${subCategory.subCategoryName}</button>
+  											<div class="dropdown-content">
+  												<div class="row">
+    												<a href="#"><c:forEach var="brand" items="${subCategory.brand}">
+														<div class="col-md-12">
+															<ul>
+																<li><a href="#">${brand.brandName}</a></li>
+															</ul>
 														</div>
-													</div>
-												</c:forEach>
+																</c:forEach> 
+													</a>
+												</div>
+											</div> 
+										</div>
+								</div>
+							</c:forEach>
 						</ul>
 					</li>
-					
-					
-					
 				</ul>				
 			</li>
-            <li class="dropdown mega-dropdown">
-    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <span class="caret"></span></a>				
-				<ul class="dropdown-menu mega-dropdown-menu">
-					<li class="col-sm-3">
-    					<ul>
-							<li class="dropdown-header"></li>
-							
-							<li class="divider"></li>
-							<li class="dropdown-header"></li>
-                           
-							
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header"></li>
-													
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header"></li>
-                                             
-						</ul>
-					</li>
-                   
-                           
-						</ul>
-					</li>
-				</ul>	
-							
+    	</ul>	
+	</c:forEach>					
 		
 		
         <ul class="nav navbar-nav navbar-right">
@@ -116,6 +84,7 @@
         </li>
         <li><a href="#">My cart (0) items</a></li>
       </ul>
+     
 	</div><!-- /.nav-collapse -->
   </nav>
 </div>

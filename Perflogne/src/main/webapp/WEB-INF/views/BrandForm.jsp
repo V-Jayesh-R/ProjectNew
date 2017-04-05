@@ -29,8 +29,12 @@
 											placeholder="Brand Description" tabindex="2"
 											class="form-control" />
 									</div>
-									
+									<label>SubCategory Name</label>
+									<form:select path="subCategoryId" items="${subcategorylist}" 
+									itemValue="subCategoryId" itemLabel="subCategoryName" class="form-control" ></form:select>
+    								 
 									<br>
+									
 									<div class="form-group">
 										<form:input path="brandId" class="form-control" id="edit" type="hidden"/>
 									</div>
@@ -65,25 +69,19 @@
 				<th>Brand Id</th>
 				<th>Brand Name</th>
 				<th>Brand Description</th>
+				<th>SUBCATEGORY</th>
 				<th>Edit</th>
 				<th>Delete</th>
 
 			</thead>
 
 			<tbody>
-				<%-- <c:forEach items="${brandlist}" var="bl">
-					<tr>
-					<td scope="row">${bl.brandId}</td>
-					<td>${bl.brandName}</td>
-					<td>${bl.brandDescription}</td>
-					<td><a href="updateBrand-${bl.brandId}" class="btn btn-warning">Edit</a></td>
-					<td><a href="deleteBrand-${bl.brandId}" class="btn btn-danger">Delete</a></td>
-					</tr>
-				</c:forEach> --%>
+				
 				<tr ng-repeat="bl in myscope | filter:search">
 					<td scope="row">{{bl.brandId}}</td>
 					<td>{{bl.brandName}}</td>
 					<td>{{bl.brandDescription}}</td>
+					 <td>{{bl.subCategory.subCategoryName}}</td> 
 					<td><a href="updateBrand-{{bl.brandId}}" class="btn btn-warning">Edit</a></td>
 					<td><a href="deleteBrand-{{bl.brandId}}" class="btn btn-danger">Delete</a></td>
 				</tr>

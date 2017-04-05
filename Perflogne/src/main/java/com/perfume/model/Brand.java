@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import com.google.gson.annotations.Expose;
 
@@ -17,6 +19,26 @@ public class Brand {
 	private String brandName;
 	@Expose
 	private String brandDescription;
+	@Expose
+	private int subCategoryId;
+
+	public int getSubCategoryId() {
+		return subCategoryId;
+	}
+	public void setSubCategoryId(int subCategoryId) {
+		this.subCategoryId = subCategoryId;
+	}
+	@Expose
+	@ManyToOne
+	@JoinColumn(name="subCategoryId",nullable=false , insertable=false, updatable=false)
+	private SubCategory subCategory;
+	
+	public SubCategory getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(SubCategory subCategory) {
+		this.subCategory = subCategory;
+	}
 	public int getBrandId() {
 		return brandId;
 	}

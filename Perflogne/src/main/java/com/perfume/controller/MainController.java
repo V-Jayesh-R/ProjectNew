@@ -52,5 +52,10 @@ public class MainController {
 		return "index";
 	}
 	
+	@RequestMapping("/productlist")
+	public String getProduct() {
+		
+		return "Product";
+	}
 	
 }

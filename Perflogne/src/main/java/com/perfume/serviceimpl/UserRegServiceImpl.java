@@ -25,8 +25,8 @@ public class UserRegServiceImpl {
 		return userRegDaoImpl.listUsers();
 	}
 	
-	public UserReg getUserRegById(int userReg){
-		return userRegDaoImpl.getUserRegById(userReg);
+	public UserReg getUserRegById(int userId){
+		return userRegDaoImpl.getUserRegById(userId);
 	}
 	public UserReg getUserRegByName(String userName){
 		return userRegDaoImpl.getUserRegByName(userName);
